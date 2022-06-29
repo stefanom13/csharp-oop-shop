@@ -39,13 +39,37 @@ namespace Csharp_Shop
             Prezzo  = prezzo;
         }
 
+        //metodo per avere nome + codice
         public string GetNomeEsteso()
         {
-            return $"{Codice} - {Nome}";
+            return $"{Codice} -- {Nome}";
         }
+
+        //metodo per avere prezzo compreso di iva
         public double GetPrezzoIva()
         {
             return prezzo + iva;
+        }
+
+        public string GetPrezzoStringa()
+        {
+            return String.Format("{0:0.00}", prezzo) + "$"; // 
+        }
+
+        public string GetTassaPrezzoStringa()
+        {
+            return String.Format("{0:0.00}", GetPrezzoIva());
+        }
+
+        //metodo per astampare
+        public void Print()
+        {
+            Console.WriteLine($"{GetNomeEsteso()}");
+            Console.Write("Descrizione: ");
+            Console.WriteLine(Descrizione);
+            Console.WriteLine(GetPrezzoStringa);
+            Console.Write("IVA: ");
+            Console.WriteLine(iva);
         }
     }
 }

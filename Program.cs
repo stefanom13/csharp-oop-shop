@@ -15,4 +15,24 @@
 //ottenuto concatenando codice + nome Nella vostro programma principale, testate tutte le funzionalità della classe Prodotto.
 //BONUS: create un metodo che restituisca il codice con un pad left di 0 per arrivare a 8 caratteri (ad esempio codice 91 diventa 00000091, mentre codice 123445567 resta come è)
 
+using Csharp_Shop;
+
+Console.WriteLine("Inserisci nome prodotto");
+string nome = Console.ReadLine();
+Console.WriteLine("Inserisci descrizione prodotto");
+string descrizione = Console.ReadLine();
+Console.WriteLine("Inserisci prezzo prodotto");
+double prezzo = double.Parse(Console.ReadLine());
+
+//creazione istanza prodotto
+
+Prodotto prodotto = new Prodotto(nome, descrizione, prezzo);
+
+//stampare
+prodotto.Print();
+
+//metodo per avere il nome esteso
+Console.WriteLine("Nome esteso: " + prodotto.GetNomeEsteso());
+//metodo prezzo comprensivo di iva
+Console.WriteLine("Prezzo con iva: " + prodotto.GetTassaPrezzoStringa());
 
