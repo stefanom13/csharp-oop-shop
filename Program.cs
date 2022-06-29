@@ -36,3 +36,6 @@ Console.WriteLine("Nome esteso: " + prodotto.GetNomeEsteso());
 //metodo prezzo comprensivo di iva
 Console.WriteLine("Prezzo con iva: " + prodotto.GetTassaPrezzoStringa());
 
+//metodo codice 8 caratteri
+Console.WriteLine("Codice di otto caratteri: " + prodotto.GetPadLeftCodice());
+

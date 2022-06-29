@@ -61,7 +61,22 @@ namespace Csharp_Shop
             return String.Format("{0:0.00}", GetPrezzoIva());
         }
 
-        //metodo per astampare
+        //metodo per stampare
+
+        // metodo che restituisca il codice con un pad left di 0 per arrivare a 8 caratteri
+
+        public string GetPadLeftCodice()
+        {
+            string PadLeftCodice = "";
+            string codice = Codice.ToString();
+            for (int i = 0; i < 8 - codice.Length; i++)
+            {
+                PadLeftCodice += "0";
+            }
+            return PadLeftCodice + codice;
+        }
+
+
         public void Print()
         {
             Console.WriteLine($"{GetNomeEsteso()}");
